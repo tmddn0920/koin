@@ -22,7 +22,7 @@ A부터 Z까지, 한국 생활에 필요한 정보와 커뮤니티를 한 곳에
 
 ## 🛠️ 기술 스택 (Tech Stack)
 
-- Frontend: **담당 — 나 (SeungWoo)**  
+- Frontend: **차승우(나)**  
 - Backend: (추후 작성 예정)  
 - Database: (추후 작성 예정)
 
