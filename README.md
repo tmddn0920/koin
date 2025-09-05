@@ -1,16 +1,33 @@
-# koin
+# KOIN
 
-A new Flutter project.
+한국 생활을 처음 경험하는 **외국인 관광객과 유학생**을 위한 올인원 가이드 앱입니다.  
+A부터 Z까지, 한국 생활에 필요한 정보와 커뮤니티를 한 곳에서 제공합니다.  
+사진을 찍으면 관련 정보를 알려주는 **스마트 카메라 기능**도 지원합니다.
 
-## Getting Started
+---
 
-This project is a starting point for a Flutter application.
+## ✨ 주요 기능 (Features)
 
-A few resources to get you started if this is your first Flutter project:
+- **생활 큐레이션**  
+  한국의 교통, 음식, 문화, 행정 서비스 등 필수 정보를 카테고리별로 정리
 
-- [Lab: Write your first Flutter app](https://docs.flutter.dev/get-started/codelab)
-- [Cookbook: Useful Flutter samples](https://docs.flutter.dev/cookbook)
+- **커뮤니티**  
+  외국인 관광객과 유학생들이 서로 질문하고 답변할 수 있는 커뮤니티 공간 제공
 
-For help getting started with Flutter development, view the
-[online documentation](https://docs.flutter.dev/), which offers tutorials,
-samples, guidance on mobile development, and a full API reference.
+- **카메라 기반 정보 제공**  
+  음식, 간판, 장소 등을 찍으면 자동으로 정보를 인식하여 설명 제공
+
+- **즐겨찾기 / 북마크**  
+  자주 찾는 정보를 저장하고 빠르게 접근 가능
+
+## 🛠️ 기술 스택 (Tech Stack)
+
+- Frontend: **담당 — 나 (SeungWoo)**  
+- Backend: (추후 작성 예정)  
+- Database: (추후 작성 예정)
+
+---
+
+## 🚀 개발 현황
+
+- 2025.9.5: 개발 시작
