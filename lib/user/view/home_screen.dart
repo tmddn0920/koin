@@ -6,9 +6,8 @@ class HomeScreen extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: customAppBar(),
-      body: const Center(
-        child: Text('Home Screen'),
-      ),
+      body: SafeArea(child: Column(children: [
+      ])),
     );
   }
 }

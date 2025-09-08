@@ -1,4 +1,6 @@
 import 'package:flutter/material.dart';
+import 'custom_icon_button.dart';
+import 'package:flutter_svg/svg.dart';
 
 AppBar customAppBar() {
   return AppBar(
@@ -25,13 +27,13 @@ AppBar customAppBar() {
       ],
     ),
     actions: [
-      IconButton(
+      CustomIconButton(
+        imagePath: 'asset/img/icon/Search.svg',
         onPressed: () {},
-        icon: const Icon(Icons.search, color: Color(0xFFD8D8D8), size: 32),
       ),
-      IconButton(
+      CustomIconButton(
+        imagePath: 'asset/img/icon/Alarm_Off.svg',
         onPressed: () {},
-        icon: const Icon(Icons.notifications_outlined, color: Color(0xFFD8D8D8), size: 32),
       ),
     ],
   );
