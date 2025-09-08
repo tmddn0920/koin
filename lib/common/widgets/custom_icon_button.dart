@@ -1,20 +1,21 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
+import 'package:koin/common/const/colors.dart';
 
 class CustomIconButton extends StatelessWidget {
   final String imagePath;
   final VoidCallback? onPressed;
   final String? label;
-  final double width;
-  final double height;
+  final double? width;   // nullable
+  final double? height;  // nullable
 
   const CustomIconButton({
     Key? key,
     required this.imagePath,
     this.onPressed,
     this.label,
-    this.width = 24,
-    this.height = 24,
+    this.width,
+    this.height,
   }) : super(key: key);
 
   @override
@@ -36,7 +37,7 @@ class CustomIconButton extends StatelessWidget {
           ),
           Text(
             label!,
-            style: const TextStyle(fontSize: 12, color: Colors.grey),
+            style: const TextStyle(fontSize: 12, color: GRAY_COLOR),
           ),
         ],
       );

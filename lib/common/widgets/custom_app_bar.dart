@@ -12,7 +12,6 @@ AppBar customAppBar() {
         Image.asset(
           'asset/img/icon/AppBar_Icon.png',
           width: 32,
-          height: 32,
         ),
         const SizedBox(width: 8),
         const Text(
