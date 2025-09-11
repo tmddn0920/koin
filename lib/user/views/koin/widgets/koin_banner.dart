@@ -1,0 +1,205 @@
+import 'package:flutter/material.dart';
+import 'package:flutter_svg/flutter_svg.dart';
+
+class BannerData {
+  final String imagePath;
+  final String category;
+  final String title;
+  final String subtitle;
+
+  const BannerData({
+    required this.imagePath,
+    required this.category,
+    required this.title,
+    required this.subtitle,
+  });
+}
+
+class KoinBanner extends StatefulWidget {
+  final List<BannerData> banners;
+
+  const KoinBanner({
+    super.key,
+    required this.banners,
+  });
+
+  @override
+  State<KoinBanner> createState() => _KoinBannerState();
+}
+
+class _KoinBannerState extends State<KoinBanner> {
+  final PageController _pageController = PageController();
+  int _currentPage = 0;
+
+  @override
+  void dispose() {
+    _pageController.dispose();
+    super.dispose();
+  }
+
+  Widget _buildBannerImage(String imagePath) {
+    if (imagePath.endsWith('.svg')) {
+      return SvgPicture.asset(
+        imagePath,
+        fit: BoxFit.cover,
+        placeholderBuilder: (BuildContext context) => Container(
+          decoration: BoxDecoration(
+            gradient: LinearGradient(
+              begin: Alignment.topLeft,
+              end: Alignment.bottomRight,
+              colors: [
+                Colors.blue.withOpacity(0.8),
+                Colors.purple.withOpacity(0.8),
+              ],
+            ),
+          ),
+          child: const Center(
+            child: Icon(
+              Icons.image,
+              color: Colors.white,
+              size: 50,
+            ),
+          ),
+        ),
+      );
+    } else {
+      return Image.asset(
+        imagePath,
+        fit: BoxFit.cover,
+        errorBuilder: (context, error, stackTrace) => Container(
+          decoration: BoxDecoration(
+            gradient: LinearGradient(
+              begin: Alignment.topLeft,
+              end: Alignment.bottomRight,
+              colors: [
+                Colors.blue.withOpacity(0.8),
+                Colors.purple.withOpacity(0.8),
+              ],
+            ),
+          ),
+          child: const Center(
+            child: Icon(
+              Icons.image,
+              color: Colors.white,
+              size: 50,
+            ),
+          ),
+        ),
+      );
+    }
+  }
+
+  @override
+  Widget build(BuildContext context) {
+    final double screenWidth = MediaQuery.of(context).size.width;
+    final double bannerHeight = screenWidth * 0.75; 
+
+    return SizedBox(
+      width: double.infinity,
+      height: bannerHeight,
+      child: Stack(
+        children: [
+          PageView(
+            controller: _pageController,
+            onPageChanged: (index) {
+              setState(() {
+                _currentPage = index;
+              });
+            },
+            children: widget.banners.map((banner) {
+              return SizedBox(
+                width: double.infinity,
+                height: bannerHeight,
+                child: _buildBannerImage(banner.imagePath),
+              );
+            }).toList(),
+          ),
+          // 그라디언트 오버레이 (터치 이벤트 무시)
+          Positioned.fill(
+            child: IgnorePointer(
+              child: Container(
+                decoration: BoxDecoration(
+                  gradient: LinearGradient(
+                    begin: Alignment.topCenter,
+                    end: Alignment.bottomCenter,
+                    colors: [
+                      const Color(0x0001002C).withOpacity(0.0), // rgba(1, 0, 44, 0.00)
+                      const Color(0x00000000).withOpacity(0.6),  // rgba(0, 0, 0, 0.60)
+                    ],
+                  ),
+                ),
+              ),
+            ),
+          ),
+          Positioned(
+            left: 20,
+            bottom: 24,
+            child: Column(
+              crossAxisAlignment: CrossAxisAlignment.start,
+              children: [
+                // Category
+                Text(
+                  widget.banners[_currentPage].category,
+                  style: const TextStyle(
+                    color: Color(0xFFFFFFFF), // #FFF
+                    fontFamily: 'GapyeongHanseokbong',
+                    fontSize: 14,
+                    fontWeight: FontWeight.w700,
+                  ),
+                ),
+                const SizedBox(height: 6),
+                // Title
+                Text(
+                  widget.banners[_currentPage].title,
+                  style: const TextStyle(
+                    color: Color(0xFFFFFFFF), // #FFF
+                    fontFamily: 'Pretendard',
+                    fontSize: 32,
+                    fontWeight: FontWeight.w700,
+                  ),
+                ),
+                const SizedBox(height: 6),
+                // Subtitle
+                Row(
+                  children: [
+                    Text(
+                      widget.banners[_currentPage].subtitle,
+                      style: const TextStyle(
+                        color: Color(0xFFFFFFFF), // #FFF
+                        fontFamily: 'Pretendard',
+                        fontSize: 16,
+                        fontWeight: FontWeight.w500,
+                      ),
+                    ),
+                  ],
+                ),
+              ],
+            ),
+          ),
+
+          Positioned(
+            right: 16,
+            bottom: 18,
+            child: Row(
+              mainAxisSize: MainAxisSize.min,
+              children: List.generate(
+                widget.banners.length,
+                (index) => Container(
+                  margin: const EdgeInsets.symmetric(horizontal: 3),
+                  width: _currentPage == index ? 8 : 6,
+                  height: _currentPage == index ? 8 : 6,
+                  decoration: BoxDecoration(
+                    shape: BoxShape.circle,
+                    color: _currentPage == index
+                        ? Colors.white
+                        : Colors.white.withOpacity(0.4),
+                  ),
+                ),
+              ),
+            ),
+          ),
+        ],
+      ),
+    );
+  }
+}

@@ -6,8 +6,8 @@ class CustomIconButton extends StatelessWidget {
   final String imagePath;
   final VoidCallback? onPressed;
   final String? label;
-  final double? width;   // nullable
-  final double? height;  // nullable
+  final double? width;   
+  final double? height;  
 
   const CustomIconButton({
     Key? key,
