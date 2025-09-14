@@ -144,6 +144,7 @@ class _KoinBannerState extends State<KoinBanner> {
                     fontFamily: 'GapyeongHanseokbong',
                     fontSize: 14,
                     fontWeight: FontWeight.w700,
+                    letterSpacing: -0.28
                   ),
                 ),
                 const SizedBox(height: 6),
@@ -155,6 +156,7 @@ class _KoinBannerState extends State<KoinBanner> {
                     fontFamily: 'Pretendard',
                     fontSize: 32,
                     fontWeight: FontWeight.w700,
+                    letterSpacing: -0.64
                   ),
                 ),
                 const SizedBox(height: 6),
@@ -168,6 +170,7 @@ class _KoinBannerState extends State<KoinBanner> {
                         fontFamily: 'Pretendard',
                         fontSize: 16,
                         fontWeight: FontWeight.w500,
+                        letterSpacing: -0.32
                       ),
                     ),
                   ],
@@ -185,13 +188,13 @@ class _KoinBannerState extends State<KoinBanner> {
                 widget.banners.length,
                 (index) => Container(
                   margin: const EdgeInsets.symmetric(horizontal: 3),
-                  width: _currentPage == index ? 8 : 6,
-                  height: _currentPage == index ? 8 : 6,
+                  width: 6,
+                  height: 6,
                   decoration: BoxDecoration(
                     shape: BoxShape.circle,
                     color: _currentPage == index
-                        ? Colors.white
-                        : Colors.white.withOpacity(0.4),
+                        ? PRIMARY_COLOR
+                        : Colors.white.withOpacity(0.7),
                   ),
                 ),
               ),

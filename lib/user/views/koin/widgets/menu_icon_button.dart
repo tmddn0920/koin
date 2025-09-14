@@ -50,6 +50,7 @@ class MenuIconButton extends StatelessWidget {
                 fontFamily: 'Pretendard',
                 fontSize: 8,
                 fontWeight: FontWeight.w500,
+                letterSpacing: -0.16,
               ),
               textAlign: TextAlign.center,
               maxLines: 2,

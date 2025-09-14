@@ -25,7 +25,7 @@ class _HomeScreenState extends State<HomeScreen> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: customAppBar(),
+      appBar: customAppBar(context),
       body: PageView(
         controller: _pageController,
         physics: const NeverScrollableScrollPhysics(),

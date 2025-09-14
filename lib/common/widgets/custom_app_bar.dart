@@ -1,8 +1,9 @@
 import 'package:flutter/material.dart';
 import 'custom_icon_button.dart';
 import 'package:flutter_svg/svg.dart';
+import '../../user/views/koin/views/search_screen.dart';
 
-AppBar customAppBar() {
+AppBar customAppBar(BuildContext context) {
   return AppBar(
     backgroundColor: Colors.white,
     elevation: 0,
@@ -28,7 +29,12 @@ AppBar customAppBar() {
     actions: [
       CustomIconButton(
         imagePath: 'asset/img/icon/Search.svg',
-        onPressed: () {},
+        onPressed: () {
+          Navigator.push(
+            context,
+            MaterialPageRoute(builder: (context) => const SearchScreen()),
+          );
+        },
       ),
       CustomIconButton(
         imagePath: 'asset/img/icon/Alarm_Off.svg',
