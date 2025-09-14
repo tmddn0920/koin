@@ -28,6 +28,7 @@ class _HomeScreenState extends State<HomeScreen> {
       appBar: customAppBar(),
       body: PageView(
         controller: _pageController,
+        physics: const NeverScrollableScrollPhysics(),
         onPageChanged: (index) {
           setState(() {
             _currentIndex = index;

@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
+import 'package:koin/common/const/colors.dart';
 
 class BannerData {
   final String imagePath;
@@ -92,8 +93,7 @@ class _KoinBannerState extends State<KoinBanner> {
   @override
   Widget build(BuildContext context) {
     final double screenWidth = MediaQuery.of(context).size.width;
-    final double bannerHeight = screenWidth * 0.75; 
-
+    final double bannerHeight = screenWidth * 0.75;
     return SizedBox(
       width: double.infinity,
       height: bannerHeight,
@@ -114,7 +114,6 @@ class _KoinBannerState extends State<KoinBanner> {
               );
             }).toList(),
           ),
-          // 그라디언트 오버레이 (터치 이벤트 무시)
           Positioned.fill(
             child: IgnorePointer(
               child: Container(
@@ -123,8 +122,8 @@ class _KoinBannerState extends State<KoinBanner> {
                     begin: Alignment.topCenter,
                     end: Alignment.bottomCenter,
                     colors: [
-                      const Color(0x0001002C).withOpacity(0.0), // rgba(1, 0, 44, 0.00)
-                      const Color(0x00000000).withOpacity(0.6),  // rgba(0, 0, 0, 0.60)
+                      const Color(0x0001002C).withOpacity(0.0),
+                      const Color(0x00000000).withOpacity(0.6),
                     ],
                   ),
                 ),
@@ -141,7 +140,7 @@ class _KoinBannerState extends State<KoinBanner> {
                 Text(
                   widget.banners[_currentPage].category,
                   style: const TextStyle(
-                    color: Color(0xFFFFFFFF), // #FFF
+                    color: WHITE_COLOR,
                     fontFamily: 'GapyeongHanseokbong',
                     fontSize: 14,
                     fontWeight: FontWeight.w700,
@@ -152,7 +151,7 @@ class _KoinBannerState extends State<KoinBanner> {
                 Text(
                   widget.banners[_currentPage].title,
                   style: const TextStyle(
-                    color: Color(0xFFFFFFFF), // #FFF
+                    color: WHITE_COLOR,
                     fontFamily: 'Pretendard',
                     fontSize: 32,
                     fontWeight: FontWeight.w700,
@@ -165,7 +164,7 @@ class _KoinBannerState extends State<KoinBanner> {
                     Text(
                       widget.banners[_currentPage].subtitle,
                       style: const TextStyle(
-                        color: Color(0xFFFFFFFF), // #FFF
+                        color: WHITE_COLOR,
                         fontFamily: 'Pretendard',
                         fontSize: 16,
                         fontWeight: FontWeight.w500,
