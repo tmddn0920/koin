@@ -28,7 +28,7 @@ class SearchScreen extends StatelessWidget {
                 ),
               ),
             ),
-            SizedBox(height: 10),
+            const SizedBox(height: 10),
             const KurationBanner(),
             const SizedBox(height: 18),
             const KoinCommunity(),

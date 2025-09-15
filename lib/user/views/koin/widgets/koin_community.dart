@@ -7,6 +7,24 @@ class KoinCommunity extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    final posts = [
+      {
+        'title': '커피 제대로 하는 집 어디 없나요?',
+        'content': '추천 부탁합니다.',
+        'time': '1 minute ago'
+      },
+      {
+        'title': '오늘 날씨가 정말 좋네요!',
+        'content': '산책하기 딱 좋은 날씨입니다.',
+        'time': '5 minutes ago'
+      },
+      {
+        'title': '플러터 너무 재밌어요!',
+        'content': '더 공부하고 싶습니다.',
+        'time': '10 minutes ago'
+      },
+    ];
+
     return Container(
       margin: const EdgeInsets.symmetric(horizontal: 12),
       decoration: BoxDecoration(
@@ -49,26 +67,35 @@ class KoinCommunity extends StatelessWidget {
                 Text(
                   '전체보기 →',
                   style: TextStyle(
-                    color: PRIMARY_COLOR,
-                    fontFamily: 'Pretendard',
-                    fontSize: 10,
-                    fontWeight: FontWeight.w500,
-                    letterSpacing: -0.2
-                  ),
+                      color: PRIMARY_COLOR,
+                      fontFamily: 'Pretendard',
+                      fontSize: 10,
+                      fontWeight: FontWeight.w500,
+                      letterSpacing: -0.2),
                   textAlign: TextAlign.right,
                 ),
               ],
             ),
+
             const SizedBox(height: 16),
-            _buildPostItem(
-              '커피 제대로 하는 집 어디 없나요?',
-              '추천 부탁합니다.',
-              '1 minute ago',
-            ),
-            _buildPostItem(
-              '오늘 날씨가 정말 좋네요!',
-              '산책하기 딱 좋은 날씨입니다.',
-              '5 minutes ago',
+
+            ListView.separated(
+              itemCount: posts.length,
+              shrinkWrap: true,
+              physics: const NeverScrollableScrollPhysics(),
+              itemBuilder: (context, index) {
+                final post = posts[index];
+                return _buildPostItem(
+                  post['title']!,
+                  post['content']!,
+                  post['time']!,
+                );
+              },
+              separatorBuilder: (context, index) => Container(
+                height: 0.5,
+                color: const Color(0xFFD9D9D9),
+                margin: const EdgeInsets.symmetric(horizontal: 12),
+              ),
             ),
           ],
         ),
@@ -138,7 +165,7 @@ class KoinCommunity extends StatelessWidget {
                   child: Image.asset(
                     'asset/img/icon/CountryIcon_Germany.png',
                     width: 8,
-                    height: 8, 
+                    height: 8,
                     fit: BoxFit.cover,
                   ),
                 ),
