@@ -23,8 +23,8 @@ class MenuIconButton extends StatelessWidget {
           mainAxisAlignment: MainAxisAlignment.center,
           children: [
               Container(
-                width: 40,
-                height: 40,
+                width: 45,
+                height: 45,
                 decoration: BoxDecoration(
                   color: WHITE_COLOR,
                   borderRadius: BorderRadius.circular(9),
@@ -39,6 +39,7 @@ class MenuIconButton extends StatelessWidget {
                 child: Center(
                   child: SvgPicture.asset(
                     imagePath,
+                    width: 30,
                   ),
                 ),
               ),
@@ -48,7 +49,7 @@ class MenuIconButton extends StatelessWidget {
               style: const TextStyle(
                 color: Color(0xFF737373),
                 fontFamily: 'Pretendard',
-                fontSize: 8,
+                fontSize: 12,
                 fontWeight: FontWeight.w500,
                 letterSpacing: -0.16,
               ),
