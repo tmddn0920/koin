@@ -3,7 +3,7 @@ import 'custom_icon_button.dart';
 import 'package:flutter_svg/svg.dart';
 import '../../user/views/koin/views/search_screen.dart';
 
-AppBar customAppBar(BuildContext context) {
+AppBar customAppBar(BuildContext context, {Function(int)? onTabSelected}) {
   return AppBar(
     backgroundColor: Colors.white,
     elevation: 0,
@@ -32,7 +32,9 @@ AppBar customAppBar(BuildContext context) {
         onPressed: () {
           Navigator.push(
             context,
-            MaterialPageRoute(builder: (context) => const SearchScreen()),
+            MaterialPageRoute(
+              builder: (context) => SearchScreen(onTabSelected: onTabSelected),
+            ),
           );
         },
       ),

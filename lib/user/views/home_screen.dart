@@ -25,7 +25,12 @@ class _HomeScreenState extends State<HomeScreen> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: customAppBar(context),
+      appBar: customAppBar(context, onTabSelected: (index) {
+        setState(() {
+          _currentIndex = index;
+        });
+        _pageController.jumpToPage(index);
+      }),
       body: PageView(
         controller: _pageController,
         physics: const NeverScrollableScrollPhysics(),

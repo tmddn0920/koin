@@ -11,7 +11,10 @@ class SearchAppBar extends StatelessWidget implements PreferredSizeWidget {
       backgroundColor: Colors.white,
       elevation: 0,
       automaticallyImplyLeading: false,
+      surfaceTintColor: Colors.white,
+      scrolledUnderElevation: 0,
       title: Container(
+        padding: const EdgeInsets.only(bottom: 10),
         child: Container(
           height: 48, 
           decoration: BoxDecoration(
@@ -57,5 +60,5 @@ class SearchAppBar extends StatelessWidget implements PreferredSizeWidget {
   }
 
   @override
-  Size get preferredSize => const Size.fromHeight(48);
+  Size get preferredSize => const Size.fromHeight(58);
 }

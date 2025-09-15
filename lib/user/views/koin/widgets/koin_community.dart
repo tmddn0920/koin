@@ -23,6 +23,16 @@ class KoinCommunity extends StatelessWidget {
         'content': '더 공부하고 싶습니다.',
         'time': '10 minutes ago'
       },
+      {
+        'title': '커피 제대로 하는 집 어디 없나요?',
+        'content': '추천 부탁합니다.',
+        'time': '1 minute ago'
+      },
+      {
+        'title': '오늘 날씨가 정말 좋네요!',
+        'content': '산책하기 딱 좋은 날씨입니다.',
+        'time': '5 minutes ago'
+      },
     ];
 
     return Container(

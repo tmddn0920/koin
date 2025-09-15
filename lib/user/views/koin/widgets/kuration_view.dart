@@ -16,7 +16,7 @@ class KurationView extends StatelessWidget {
         itemBuilder: (context, index) {
           final item = items[index];
           return Padding(
-            padding: EdgeInsets.only(right: 12),
+            padding: EdgeInsets.only(right: 16),
             child: KurationCard(
               assetPath: item.assetPath,
               title: item.title,

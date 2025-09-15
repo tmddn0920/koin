@@ -3,9 +3,12 @@ import '../widgets/koin_community.dart';
 import '../widgets/search_app_bar.dart';
 import '../widgets/kuration_banner.dart';
 import 'package:koin/common/const/colors.dart';
+import 'package:koin/common/widgets/custom_bottom_navigation_bar.dart';
+import 'package:koin/user/views/home_screen.dart';
 
 class SearchScreen extends StatelessWidget {
-  const SearchScreen({super.key});
+  final Function(int)? onTabSelected;
+  const SearchScreen({super.key, this.onTabSelected});
 
   @override
   Widget build(BuildContext context) {
@@ -14,7 +17,6 @@ class SearchScreen extends StatelessWidget {
       body: SingleChildScrollView(
         child: Column(
           children: [
-            SizedBox(height: 10),
             Container(
               height: 75,
               decoration: const BoxDecoration(
@@ -34,6 +36,17 @@ class SearchScreen extends StatelessWidget {
             const KoinCommunity(),
           ],
         ),
+      ),
+      bottomNavigationBar: CustomBottomNavigationBar(
+        currentIndex: 0,
+        onTap: (index) {
+          if (index == 0) {
+            Navigator.pop(context);
+          } else {
+            Navigator.pop(context);
+            onTabSelected?.call(index);
+          }
+        },
       ),
     );
   }
