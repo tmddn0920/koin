@@ -25,7 +25,7 @@ class _HomeScreenState extends State<HomeScreen> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: customAppBar(context, onTabSelected: (index) {
+      appBar: _currentIndex == 3 ? null : customAppBar(context, onTabSelected: (index) {
         setState(() {
           _currentIndex = index;
         });
