@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:koin/user/views/home_screen.dart';
+import 'package:koin/user/views/auth/views/splash_screen.dart';
 
 void main() {
   runApp(
@@ -9,7 +10,7 @@ void main() {
         fontFamily: 'Pretendard',
       ),
       debugShowCheckedModeBanner: false,
-      home: HomeScreen(),
+      home: SplashScreenWrapper(),
     )
   );
 }
